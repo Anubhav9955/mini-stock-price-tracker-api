@@ -3,7 +3,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 
-app.use(cors());
+// Enable CORS to allow requests only from your frontend
+app.use(cors({
+  origin: "https://mini-stock-price-tracker-frontend.vercel.app", // Replace with your frontend's domain
+}));
+
 
 async function start() {
   try {
